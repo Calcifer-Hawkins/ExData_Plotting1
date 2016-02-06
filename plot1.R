@@ -37,7 +37,9 @@ GAP_data$Global_active_power <- as.numeric(as.character((GAP_data$Global_active_
 twodays_data <- filter(GAP_data, (Date == "2007-02-01") | (Date == "2007-02-02"))
 
 # 2. Makes plots: plots a histogram of the data on Global Active Power(kilowatts), stores it in png file.
+
 png(file = "plot1.png", width = 480, height = 480)
+par(bg = "transparent")
 hist(twodays_data$Global_active_power, col = "red", bg = "transparent", xlab = "Global Active Power(kilowatts)", main = ("Global Active Power"))
 
 #close the png device.
