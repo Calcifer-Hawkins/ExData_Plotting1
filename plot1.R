@@ -24,8 +24,7 @@ library(dplyr)
 setwd("D:/R-3.2.3/coursera/exdata_data_household_power_consumption/")
 
 # Reads and stores from txt file
-householdpower <- read.table("./household_power_consumption.txt", header = TRUE, sep = ";")
-##householdpower <- filter(householdpower, ((as.character(Date) != "?") && (as.character(Time) != "?") && (as.character(Global_active_power) != "?") && (as.character(Global_reactive_power) != "?") && (as.character(Voltage) != "?") && (as.character(Global_intensity) != "?") && (as.character(Sub_metering_1) != "?") && (as.character(Sub_metering_2) != "?") && (as.character(Sub_metering_3) != "?")))
+householdpower <- read.table("./household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?")
 
 # stores data of Date as character and Global Active Power
 GAP_data <- select(householdpower, c(1, 3))
