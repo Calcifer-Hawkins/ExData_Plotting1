@@ -40,7 +40,7 @@ locale_original <- Sys.getlocale( category = "LC_TIME" )
 Sys.setlocale("LC_TIME", "English")
 
 
-# 2. Makes plots: plots the data on Global Active Power(kilowatts) ~ Times.
+# 2. Makes plots: plots the data on Sub_metering datas ~ Times.
 
 png(file = "plot3.png", width = 480, height = 480)
 par(bg = "transparent")
