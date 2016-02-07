@@ -27,12 +27,12 @@ setwd("D:/R-3.2.3/coursera/exdata_data_household_power_consumption/")
 householdpower <- read.table("./household_power_consumption.txt", header = TRUE, stringsAsFactors=FALSE, sep = ";", na.strings = "?")
 
 # stores data of Date as character and Sub_metering datas
-GAP_data <- select(householdpower, c(1, 2, 7, 8, 9))
-GAP_data$Date <- as.character(as.Date(GAP_data$Date, format = "%d/%m/%Y"))
+SM_data <- select(householdpower, c(1, 2, 7, 8, 9))
+SM_data$Date <- as.character(as.Date(GAP_data$Date, format = "%d/%m/%Y"))
 
 
 # subsets data of 2007-02-01 and 2007-02-02
-twodays_data <- filter(GAP_data, (Date == "2007-02-01") | (Date == "2007-02-02"))
+twodays_data <- filter(SM_data, (Date == "2007-02-01") | (Date == "2007-02-02"))
 twodays_data$Time <- strptime(paste(twodays_data$Date, twodays_data$Time), format = "%Y-%m-%d %H:%M:%S")
 
 # setting locale to en_US for proper day in a week labels
