@@ -45,7 +45,7 @@ Sys.setlocale("LC_TIME", "English")
 png(file = "plot3.png", width = 480, height = 480)
 par(bg = "transparent")
 plot(twodays_data$Time, twodays_data$Sub_metering_1, 
-     type="l", ylab="Energy sub metering", cex.lab=0.7)
+     type="l", ylab="Energy sub metering", xlab = "", cex.lab=0.7)
 
 lines(twodays_data$Time, twodays_data$Sub_metering_2, col="red")
 lines(twodays_data$Time, twodays_data$Sub_metering_3, col="blue")
